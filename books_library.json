@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Python Basics",
+        "author": "John Smith",
+        "price": 499
+    },
+    {
+        "id": 2,
+        "title": "Learn Flask",
+        "author": "David Miller",
+        "price": 599
+    },
+    {
+        "id": 3,
+        "title": "JavaScript Essentials",
+        "author": "Robert Johnson",
+        "price": 549
+    },
+    {
+        "id": 4,
+        "title": "HTML and CSS Mastery",
+        "author": "Emily Davis",
+        "price": 449
+    },
+    {
+        "id": 5,
+        "title": "Mastering REST APIs",
+        "author": "Michael Brown",
+        "price": 699
+    },
+    {
+        "id": 6,
+        "title": "Data Structures with Python",
+        "author": "Sarah Wilson",
+        "price": 799
+    },
+    {
+        "id": 7,
+        "title": "JavaScript Advanced Concepts",
+        "author": "Daniel Anderson",
+        "price": 749
+    },
+    {
+        "id": 8,
+        "title": "Flask Web Development",
+        "author": "James Thomas",
+        "price": 649
+    },
+    {
+        "id": 9,
+        "title": "Clean Code for Beginners",
+        "author": "William Martin",
+        "price": 599
+    },
+    {
+        "id": 10,
+        "title": "Backend Development Fundamentals",
+        "author": "Sophia Taylor",
+        "price": 899
+    },
+    {
+        "id": 11,
+        "author": "sant",
+        "title": "ramaryan",
+        "price": 563
+    },
+    {
+        "id": 12,
+        "author": "woli",
+        "title": "abcd",
+        "price": 199
+    }
+]
