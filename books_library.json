@@ -1,17 +1,5 @@
 [
     {
-        "id": 1,
-        "title": "Python Basics",
-        "author": "John Smith",
-        "price": 499
-    },
-    {
-        "id": 2,
-        "title": "Learn Flask",
-        "author": "David Miller",
-        "price": 599
-    },
-    {
         "id": 3,
         "title": "JavaScript Essentials",
         "author": "Robert Johnson",
@@ -48,12 +36,6 @@
         "price": 649
     },
     {
-        "id": 9,
-        "title": "Clean Code for Beginners",
-        "author": "William Martin",
-        "price": 599
-    },
-    {
         "id": 10,
         "title": "Backend Development Fundamentals",
         "author": "Sophia Taylor",
@@ -61,14 +43,14 @@
     },
     {
         "id": 11,
-        "author": "unknown ",
-        "title": "new book",
-        "price": 1500
+        "author": "SELF",
+        "title": "WEB DEVELOPMENT",
+        "price": 999
     },
     {
         "id": 12,
-        "author": "woli",
-        "title": "abcd",
-        "price": 199
+        "author": "SELF",
+        "title": "DATA  ANALYST",
+        "price": 499
     }
 ]
