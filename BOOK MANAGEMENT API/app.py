@@ -12,7 +12,7 @@ def load_books():
     if not os.path.exists(FILENAME):
         books = [
             {
-                "id": 1,
+                "id": 1, 
                 "title": "Python Basics",
                 "author": "John Smith",
                 "price": 499,
