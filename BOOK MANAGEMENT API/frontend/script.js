@@ -98,8 +98,8 @@ getBookForm.addEventListener("submit", function (event) {
 
     fetch(`http://127.0.0.1:5000/books/${bookId}`)
 
-        .then(response =>{
-            if(!response.ok){
+        .then(response => {
+            if (!response.ok) {
                 throw new Error("Book not found");
             }
             return response.json();
@@ -188,6 +188,130 @@ updateBookForm.addEventListener("submit", function (event) {
         .catch(error => {
 
             document.getElementById("update-book-message").textContent =
+                error.message;
+
+        });
+
+});
+
+// delete  book
+const deleteBookForm = document.getElementById("delete-book-form");
+
+deleteBookForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const bookId = document.getElementById("delete-book-id").value;
+
+    fetch(`http://127.0.0.1:5000/books/${bookId}`, {
+        method: "DELETE",
+
+        // headers: {
+        //     "Content-Type": "application/json"
+        // },
+
+        // body: JSON.stringify(updatedBook)
+    })
+
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Book not found");
+            }
+            return response.json();
+        })
+
+        .then(data => {
+
+            const result = document.getElementById("delete-book-message");
+
+
+            result.innerHTML = `
+                
+                <p>Book deleted successfully</p>
+            `;
+
+        })
+
+        .catch(error => {
+
+            const result = document.getElementById("delete-book-message");
+
+            result.innerHTML = `
+                <p>Error :${error.message} ,404</p>
+            `;
+
+
+        });
+
+});
+
+// patch book
+const patchBookForm = document.getElementById("patch-book-form");
+
+patchBookForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const bookId = document.getElementById("patch-book-id").value;
+
+    const title = document.getElementById("patch-title").value;
+
+    const author = document.getElementById("patch-author").value;
+
+    const price = document.getElementById("patch-price").value;
+
+
+    const patchBook = {};
+    if (title.trim() !== "") {
+        patchBook.title = title;
+    }
+    if (author.trim() !== "") {
+        patchBook.author = author;
+    }
+    if (price !== "") {
+        patchBook.price = Number(price);
+    }
+    if (Object.keys(patchBook).length === 0) {
+        document.getElementById("patch-book-message").textContent = "Please enter at least one field to update."
+        return;
+    }
+
+
+
+    fetch(`http://127.0.0.1:5000/books/${bookId}`, {
+
+        method: "PATCH",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(patchBook)
+
+    })
+
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error("Book not found");
+            }
+
+            return response.json();
+
+        })
+
+        .then(data => {
+
+            console.log(data);
+
+            document.getElementById("patch-book-message").textContent =
+                data.message;
+
+        })
+
+        .catch(error => {
+
+            document.getElementById("patch-book-message").textContent =
                 error.message;
 
         });
