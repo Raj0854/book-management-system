@@ -27,16 +27,20 @@
             <button id="add-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#addNewBook">+ Add
                 Book</button>
 
-            <button id="get-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#getBookModal">🔍 Get Book</button>
+            <button id="get-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#getBookModal">🔍 Get
+                Book</button>
 
-            <button id="update-book-btn">✏️ Update Book</button>
+            <button id="update-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#updateBookModal">✏️
+                Update Book</button>
 
-            <button id="patch-book-btn">🔧 Patch Book</button>
+            <button id="patch-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#patchBookModal">🔧 Patch
+                Book</button>
 
-            <button id="delete-book-btn">🗑️ Delete Book</button>
+            <button id="delete-book-btn" type="button" data-bs-toggle="modal" data-bs-target="#deleteBookModal">🗑️
+                Delete Book</button>
 
         </div>
-      
+
         <div id="books-container"></div>
     </main>
 
@@ -117,4 +121,52 @@
     </div>
 
 </div>
-    <script src="script.js"></script>
+<!-- put  -->
+<!-- UPDATE BOOK MODAL -->
+
+<div class="modal fade" id="updateBookModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="updateBookModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title fs-5" id="updateBookModalLabel">
+                    Update Book
+                </h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body m-3">
+
+                <form id="update-book-form" class="forms_inputs ">
+
+                    <input type="number" id="update-book-id" placeholder="Book ID" class="form-control mb-3" required>
+
+                    <input type="text" id="update-title" placeholder="New title" class="form-control mb-3" required>
+
+                    <input type="text" id="update-author" placeholder="New author" class="form-control mb-3 " required>
+
+                    <input type="number" id="update-price" placeholder="New price" class="form-control mb-3" required>
+
+                    <button type="submit" class="btn btn-warning">
+                        Update Book
+                    </button>
+
+                </form>
+
+                <p id="update-book-message"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
