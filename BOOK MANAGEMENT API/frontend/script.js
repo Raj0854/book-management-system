@@ -33,7 +33,7 @@ const form = document.getElementById("book-form");
 
 const message = document.getElementById("message");
 
-
+// add new book
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -86,6 +86,8 @@ form.addEventListener("submit", function (event) {
         });
 
 });
+
+// get new book
 const getBookForm = document.getElementById("get-book-form");
 
 getBookForm.addEventListener("submit", function (event) {
@@ -124,6 +126,69 @@ getBookForm.addEventListener("submit", function (event) {
                 <p>Error :${error.message} ,404</p>
             `;
 
+
+        });
+
+});
+
+// update book
+const updateBookForm = document.getElementById("update-book-form");
+
+updateBookForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const bookId = document.getElementById("update-book-id").value;
+
+    const title = document.getElementById("update-title").value;
+
+    const author = document.getElementById("update-author").value;
+
+    const price = Number(document.getElementById("update-price").value);
+
+
+    const updatedBook = {
+        title: title,
+        author: author,
+        price: price
+    };
+
+
+    fetch(`http://127.0.0.1:5000/books/${bookId}`, {
+
+        method: "PUT",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(updatedBook)
+
+    })
+
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error("Book not found");
+            }
+
+            return response.json();
+
+        })
+
+        .then(data => {
+
+            console.log(data);
+
+            document.getElementById("update-book-message").textContent =
+                data.message;
+
+        })
+
+        .catch(error => {
+
+            document.getElementById("update-book-message").textContent =
+                error.message;
 
         });
 
