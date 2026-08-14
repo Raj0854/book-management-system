@@ -121,7 +121,6 @@
     </div>
 
 </div>
-<!-- put  -->
 <!-- UPDATE BOOK MODAL -->
 
 <div class="modal fade" id="updateBookModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -161,6 +160,95 @@
                 </form>
 
                 <p id="update-book-message"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- PATCH BOOK MODAL -->
+
+<div class="modal fade" id="patchBookModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="patchBookModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title fs-5" id="patchBookModalLabel">
+                    Patch Book
+                </h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body m-3">
+
+                <form id="patch-book-form" class="forms_inputs ">
+
+                    <input type="number" id="patch-book-id" placeholder="Book ID" class="form-control mb-3" required> 
+
+                    <input type="text" id="patch-title" placeholder="New title" class="form-control mb-3" >
+
+                    <input type="text" id="patch-author" placeholder="New author" class="form-control mb-3 " >
+
+                    <input type="number" id="patch-price" placeholder="New price" class="form-control mb-3"     >
+
+                    <button type="submit" class="btn btn-warning">
+                        Patch Book
+                    </button>
+
+                </form>
+
+                <p id="patch-book-message"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- DELETE BOOK MODAL -->
+
+<div class="modal fade" id="deleteBookModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="deleteBookModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title fs-5" id="deleteBookModalLabel">
+                    Delete Book
+                </h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body m-3">
+
+                <form id="delete-book-form" class="forms_inputs ">
+
+                    <input type="number" id="delete-book-id" placeholder="Book ID" class="form-control mb-3" required>
+
+
+                    <button type="submit" class="btn btn-warning">
+                        Delete Book
+                    </button>
+
+                </form>
+
+                <p id="delete-book-message"></p>
 
             </div>
 
