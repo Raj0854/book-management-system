@@ -166,13 +166,14 @@ updateBookForm.addEventListener("submit", function (event) {
 
     })
 
-        .then(response => {
+        .then(async response => {
+            const data= await response.json()
 
             if (!response.ok) {
-                throw new Error("Book not found");
+                throw new Error(data.message);
             }
 
-            return response.json();
+            return data;
 
         })
 
@@ -290,13 +291,14 @@ patchBookForm.addEventListener("submit", function (event) {
 
     })
 
-        .then(response => {
+        .then(async response => {
+            const data = await response.json();
 
             if (!response.ok) {
-                throw new Error("Book not found");
+                throw new Error(data.message);
             }
 
-            return response.json();
+            return data;
 
         })
 
