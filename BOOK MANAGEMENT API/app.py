@@ -71,7 +71,7 @@ def add_book():
     if data["author"].strip() == "":
         return jsonify({"message": "Author cannot be empty"}), 400
     if not isinstance(data["price"], (int, float)):
-        return jsonify({"message": "price should be number, not a string"}), 400
+        return jsonify({"message": "Invalid price!. Price should be number, not a string"}), 400
     if data["price"] <= 0:
         return (
             jsonify(
@@ -114,7 +114,7 @@ def updated_book(book_id):
     if data["author"].strip() == "":
         return jsonify({"message": "Author cannot be empty"}), 400
     if not isinstance(data["price"], (int, float)):
-        return jsonify({"message": "price should be number, not a string"}), 400
+        return jsonify({"message": "Invalid price!. Price should be number, not a string"}), 400
     if data["price"] <= 0:
         return (
             jsonify(
@@ -152,7 +152,7 @@ def patch_book(book_id):
 
     if "price" in data:
         if not isinstance(data["price"], (int, float)) or data["price"] <= 0:
-            return jsonify({"message": "Invalid price"}), 400
+            return jsonify({"message": "Invalid price!. Price should be greater than zero and a positive number"}), 400
     for book in books:
         if book["id"]==book_id:
             if "title" in data:
